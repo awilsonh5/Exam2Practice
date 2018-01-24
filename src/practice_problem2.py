@@ -42,7 +42,7 @@ def main():
 def run_test_practice_problem2a():
     """ Tests the   practice_problem2a  function. """
     # ------------------------------------------------------------------
-    # TODO: 2. Implement this TEST function.
+    # DONE: 2. Implement this TEST function.
     #   It TESTS the  practice_problem2a  function defined below.
     #   Include at least **   4 reasonable   ** tests.
     #
@@ -65,8 +65,8 @@ def run_test_practice_problem2a():
     print('TEST 1')
     print('')
     print('------------------------------------------')
-    print('Expected: ' + expected)
-    print('Actual: ' + actual)
+    print('Expected: ', expected)
+    print('Actual: ', actual)
     if expected == actual:
         print('')
         print('PASSED')
@@ -77,14 +77,14 @@ def run_test_practice_problem2a():
     # Test 2
 
     sequence = [1, 2, 3, 4, 5]
-    expected = [6, 7, 8, 9, 10]
-    delta = 5
+    expected = [-1, 0, 1, 2, 3]
+    delta = -2
     actual = practice_problem2a(sequence, delta)
     print('TEST 2')
     print('')
     print('------------------------------------------')
-    print('Expected: ' + expected)
-    print('Actual: ' + actual)
+    print('Expected: ', expected)
+    print('Actual: ', actual)
     if expected == actual:
         print('')
         print('PASSED')
@@ -94,15 +94,15 @@ def run_test_practice_problem2a():
 
     # Test 3
 
-    sequence = [1, 2, 3, 4, 5]
-    expected = [6, 7, 8, 9, 10]
-    delta = 5
+    sequence = [7, 18, 29, 30, 41]
+    expected = [10, 21, 32, 33, 44]
+    delta = 3
     actual = practice_problem2a(sequence, delta)
     print('TEST 3')
     print('')
     print('------------------------------------------')
-    print('Expected: ' + expected)
-    print('Actual: ' + actual)
+    print('Expected: ', expected)
+    print('Actual: ', actual)
     if expected == actual:
         print('')
         print('PASSED')
@@ -113,14 +113,14 @@ def run_test_practice_problem2a():
     # Test 4
 
     sequence = [1, 2, 3, 4, 5]
-    expected = [6, 7, 8, 9, 10]
-    delta = 5
+    expected = [21, 22, 23, 24, 25]
+    delta = 20
     actual = practice_problem2a(sequence, delta)
     print('TEST 4')
     print('')
     print('------------------------------------------')
-    print('Expected: ' + expected)
-    print('Actual: ' + actual)
+    print('Expected: ', expected)
+    print('Actual: ', actual)
     if expected == actual:
         print('')
         print('PASSED')
@@ -148,14 +148,17 @@ def practice_problem2a(sequence, delta):
       :type delta:    int
     """
     ####################################################################
-    # TODO: 3. Implement and test this function.
+    # DONE: 3. Implement and test this function.
     #     The testing code is already written for you (above).
     ####################################################################
     # DIFFICULTY AND TIME RATINGS (see top of this file for explanation)
     #    DIFFICULTY:      5
     #    TIME ESTIMATE:   5 minutes.
     ####################################################################
-
+    new_sequence = []
+    for k in range(len(sequence)):
+        new_sequence = new_sequence + [sequence[k] + delta]
+    return new_sequence
 
 def run_test_practice_problem2b():
     """ Tests the   practice_problem2b  function. """
@@ -242,7 +245,7 @@ def practice_problem2b(sequence):
       :type sequence [str]
     """
     ####################################################################
-    # TODO: 4. Implement and test this function.
+    # DONE: 4. Implement and test this function.
     #     The testing code is already written for you (above).
     ####################################################################
     # DIFFICULTY AND TIME RATINGS (see top of this file for explanation)
@@ -250,6 +253,17 @@ def practice_problem2b(sequence):
     #    TIME ESTIMATE:   10 minutes.
     ####################################################################
 
+    string = ''
+    if len(sequence) == 0:
+        return string
+    else:
+
+        for k in range(len(sequence)):
+            if sequence[k] == '':
+                string = string + ''
+            else:
+                string = string + str(sequence[k][0])
+        return string
 
 # ----------------------------------------------------------------------
 # Calls  main  to start the ball rolling.
